@@ -1,0 +1,464 @@
+/* Dashboard-specific styles - FIXED VERSION */
+
+/* FIXED: App container with proper grid layout instead of min-height */
+.command-center {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-height: 100vh;
+}
+
+/* FIXED: Header - Changed from fixed to sticky positioning */
+.command-bar {
+  grid-row: 1;
+  position: sticky;
+  top: 0;
+  background: rgba(132, 148, 131, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  z-index: var(--z-header);
+}
+
+/* FIXED: Responsive header content */
+.command-bar-content {
+  max-width: 2200px;
+  margin: 0 80px;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.command-bar-title {
+  font-size: 20px;
+  font-weight: 800;
+  background: #faf3dd;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+}
+
+/* FIXED: Responsive search */
+.command-bar-search {
+ 
+  max-width: 400px;
+  
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid rgba(229, 231, 235, 0.5);
+  border-radius: 12px;
+  background: rgba(249, 250, 251, 0.8);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.command-bar-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* FIXED: Navigation - Changed from fixed to sticky */
+.nav-tabs {
+  grid-row: 2;
+  position: sticky;
+  top: var(--header-height);
+  left:40%;
+  z-index: var(--z-nav);
+  background: rgba(240, 203, 168, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.nav-tab {
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.nav-tab.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: #91785d;
+  color: #faf3dd;
+  font-size: 18px;
+}
+
+.btn-primary:hover {
+  background: #7a6650;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #849483;
+  color: #faf3dd;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.btn-secondary:hover {
+  background: #6f7d6e;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* FIXED: Floating alert with proper z-index */
+.floating-alert {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  border-radius: 12px;
+  padding: 16px;
+  color: #991b1b;
+  font-weight: 500;
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: var(--z-toast);
+}
+
+/* FIXED: Main content area - Natural flow instead of fixed positioning */
+.dashboard-container {
+  grid-row: 3;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+.dashboard-main {
+  padding: 2rem 0;
+}
+
+/* FIXED: Stats grid - Removed fixed positioning, made responsive */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #faf3dd;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-info h3 {
+  font-size: 16px;
+  color: #2d3444;
+  margin-bottom: 8px;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: #4f5862;
+}
+
+.stat-icon {
+  font-size: 28px;
+}
+
+/* Dashboard grid layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+}
+
+.dashboard-content {
+  background: #faf3dd;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height:58vh;
+}
+.deadline-task-content {
+  background: #faf3dd;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height:80vh;
+}
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filters-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Task list styles */
+.task-list-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.task-list-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.task-list-container {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Form styles */
+.form-group {
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+/* RESPONSIVE DESIGN - Mobile First */
+@media (min-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .task-list-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .command-bar-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .command-bar-title {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .command-bar-search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+  }
+
+  .command-bar-button {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-info h3 {
+    font-size: 20px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .stat-icon {
+    font-size: 34px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 5fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-container {
+    padding: 0 2rem;
+  }
+}
+
+/* FIXED: Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .nav-tabs {
+    position: static; /* Remove sticky on mobile to prevent overlap */
+    padding: 0.5rem;
+  }
+
+  .nav-tab {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .dashboard-main {
+    padding: 1rem 0;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .dashboard-content,
+  .filters-card {
+    padding: 16px;
+  }
+}
+
+/* Handle very small screens */
+@media (max-width: 480px) {
+  .command-bar {
+    padding: 15px 0;
+  }
+
+  .command-bar-title {
+    font-size: 18px;
+  }
+
+  .nav-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-tab {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stats-grid {
+    gap: 0.75rem;
+  }
+
+  .stat-info h3 {
+    font-size: 14px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .stat-icon {
+    font-size: 24px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .nav-tabs {
+    position: static;
+  }
+
+  .dashboard-main {
+    padding-top: 1rem;
+  }
+}
