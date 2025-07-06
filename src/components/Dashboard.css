@@ -1,13 +1,9 @@
-/* Dashboard-specific styles - FIXED VERSION */
-
-/* FIXED: App container with proper grid layout instead of min-height */
 .command-center {
   display: grid;
   grid-template-rows: auto auto 1fr;
   min-height: 100vh;
 }
 
-/* FIXED: Header - Changed from fixed to sticky positioning */
 .command-bar {
   grid-row: 1;
   position: sticky;
@@ -20,7 +16,6 @@
   z-index: var(--z-header);
 }
 
-/* FIXED: Responsive header content */
 .command-bar-content {
   max-width: 2200px;
   margin: 0 80px;
@@ -37,15 +32,13 @@
   font-weight: 800;
   background: #faf3dd;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: left;
 }
 
-/* FIXED: Responsive search */
 .command-bar-search {
- 
   max-width: 400px;
-  
 }
 
 .search-input {
@@ -71,7 +64,6 @@
   justify-content: center;
 }
 
-/* FIXED: Navigation - Changed from fixed to sticky */
 .nav-tabs {
   grid-row: 2;
   position: sticky;
@@ -147,7 +139,6 @@
   font-size: 12px;
 }
 
-/* FIXED: Floating alert with proper z-index */
 .floating-alert {
   position: fixed;
   bottom: 24px;
@@ -165,7 +156,6 @@
   z-index: var(--z-toast);
 }
 
-/* FIXED: Main content area - Natural flow instead of fixed positioning */
 .dashboard-container {
   grid-row: 3;
   max-width: 120rem;
@@ -178,7 +168,6 @@
   padding: 2rem 0;
 }
 
-/* FIXED: Stats grid - Removed fixed positioning, made responsive */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -217,7 +206,6 @@
   font-size: 28px;
 }
 
-/* Dashboard grid layout */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -322,7 +310,6 @@
   align-items: center;
 }
 
-/* RESPONSIVE DESIGN - Mobile First */
 @media (min-width: 480px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -389,10 +376,9 @@
   }
 }
 
-/* FIXED: Mobile-specific adjustments */
 @media (max-width: 767px) {
   .nav-tabs {
-    position: static; /* Remove sticky on mobile to prevent overlap */
+    position: static; 
     padding: 0.5rem;
   }
 
@@ -415,7 +401,6 @@
   }
 }
 
-/* Handle very small screens */
 @media (max-width: 480px) {
   .command-bar {
     padding: 15px 0;
@@ -452,7 +437,6 @@
   }
 }
 
-/* Landscape orientation on mobile */
 @media (max-height: 500px) and (orientation: landscape) {
   .nav-tabs {
     position: static;

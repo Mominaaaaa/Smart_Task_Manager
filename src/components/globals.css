@@ -5,14 +5,11 @@
 }
 
 :root {
-  /* Z-index system */
   --z-modal: 9999;
   --z-overlay: 9998;
   --z-toast: 9997;
   --z-header: 50;
   --z-nav: 40;
-
-  /* Layout variables */
   --header-height: 80px;
   --nav-height: 60px;
   --container-padding: 1rem;
@@ -35,7 +32,7 @@ body::before {
   background-image: url("/src/assets/image.png");
   background-size: cover;
   background-position: center;
-  opacity: 0.6; /* Adjust this value as needed */
+  opacity: 0.6;
   z-index: -1;
   pointer-events: none;
 }
@@ -223,7 +220,6 @@ body::before {
   gap: 12px;
 }
 
-/* Responsive breakpoints */
 @media (min-width: 480px) {
   :root {
     --container-padding: 1.5rem;
